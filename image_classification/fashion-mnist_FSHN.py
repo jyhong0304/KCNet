@@ -61,7 +61,7 @@ def str2bool(v):
 #################
 # Parameters
 #################
-parser = argparse.ArgumentParser(description='Fully-trained Single-Hidden-layer Neural Network for MNIST')
+parser = argparse.ArgumentParser(description='Fully-trained Single-Hidden-layer Neural Network for Fashion-MNIST')
 parser.add_argument('--batch_size', type=int, default=64, help='The number of batch size for training.')
 parser.add_argument('--test_batch_size', type=int, default=1000, help='The number of batch size for testing.')
 parser.add_argument('--epoch', type=int, default=5, help='The number of epoch.')
