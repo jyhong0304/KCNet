@@ -7,7 +7,7 @@ from sklearn.preprocessing import StandardScaler
 import time
 from imblearn.over_sampling import ADASYN
 
-parser = argparse.ArgumentParser()
+parser = argparse.ArgumentParser(description='KCNet for Odor Perception')
 parser.add_argument('--data', type=str, default=None, help='Dataset.', required=True)
 parser.add_argument('--data_path', type=str, default=None, help='The path of dataset.', required=True)
 parser.add_argument('--hsize', type=int, default=1000, help='The number of hidden nodes.')
