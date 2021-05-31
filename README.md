@@ -38,35 +38,17 @@ All the details of best hyperparameters for KCNet and its variants are described
 
 - To train and test the KCNet, run this command:
 ```train
-python odor_perception/run_KCNet.py 
---data=sweet 
---hsize=1300 
---data_path=DATA_PATH
+python odor_perception/run_KCNet.py --data=sweet --hsize=1300 --data_path=DATA_PATH
 ```
 
 - To train and test the KCNet with DOA, run this command:
 ```train
-python odor_perception/run_KCNet_DOA.py 
---epoch=100
---data=sweet
---data_path=DATA_PATH
---hsize=1300
---lr=0.5
---stop_metric=0.87
---show_images=false
+python odor_perception/run_KCNet_DOA.py --epoch=100 --data=sweet --data_path=DATA_PATH --hsize=1300 --lr=0.5 --stop_metric=0.87 --show_images=false
 ```
 
 - To train and test the KCNet with Ensemble DOA, run this command:
 ```train
-python odor_perception/run_KCNet_DOA.py 
---n_submodels=13
---epoch=100
---data=sweet
---data_path=DATA_PATH
---hsize=100
---lr=0.5
---stop_metric=0.90
---show_images=false
+python odor_perception/run_KCNet_DOA.py --n_submodels=13 --epoch=100 --data=sweet --data_path=DATA_PATH --hsize=100 --lr=0.5 --stop_metric=0.90 --show_images=false
 ```
 
 ### Image Classification Tasks
@@ -78,21 +60,12 @@ python image_classification/mnist_KCNet.py --hsize=6500
 
 - To train and test the KCNet with DOA for Fashion-MNIST, run this command:
 ```train
-python image_classification/fashion-mnist_KCNet_DOA.py 
---epoch=5
---hsize=7000 
---lr=1e-5
---stop_metric=0.90
+python image_classification/fashion-mnist_KCNet_DOA.py --epoch=5 --hsize=7000 --lr=1e-5 --stop_metric=0.90
 ```
 
 - To train and test the KCNet with ensemble DOA for EMNIST-balanced, run this command:
 ```train
-python image_classification/emnist-balanced_KCNet_EnsembleDOA.py 
---n_submodels=10
---epoch=30
---hsize=450
---lr=1e-2
---stop_metric=0.85
+python image_classification/emnist-balanced_KCNet_EnsembleDOA.py --n_submodels=10 --epoch=30 --hsize=450 --lr=1e-2 --stop_metric=0.85
 ```
 
 ## Results
