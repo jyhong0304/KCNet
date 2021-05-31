@@ -1,13 +1,10 @@
 import argparse
-
 import torch
 import torchvision.datasets
 import torchvision.transforms as transforms
-
 from models.KCNet import KCNet
 from helper_func import to_onehot
 from helper_func import get_all_data
-import time
 import matplotlib.pyplot as plt
 import seaborn as sns
 
