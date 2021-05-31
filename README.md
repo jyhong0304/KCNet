@@ -67,11 +67,9 @@ submodels X # of hidden units for each submodel) for "KCNet w/ Ensemble DOA". ME
 | Model name                                        | MNIST             | Fashion-MNIST     | EMNIST-Balanced       |
 | --------------------------                        |----------------   | --------------    |------                 |
 | Extreme Learning Machine (ELM)                         |0.9658 (6,500)     |0.8813 (7,000)     |0.7747 (4,500)         |
-| Fully-trained Single-Hidden-layer Neural network (FSHN)  |0.975 (65,200)     |0.8671 (70,765)    |**
-0.8179** (211,375)       |
+| Fully-trained Single-Hidden-layer Neural network (FSHN)  |0.975 (65,200)     |0.8671 (70,765)    |**0.8179** (211,375)       |
 | KCNet                                             |0.9735 (6,500)     |0.8849 (7,000)     |0.7762 (4,500)         |
 | KCNet w/ DOA                                      |0.9731 (6,500)     |0.8845 (7,000)     |0.7761 (4,500)         |
-| KCNet w/ Ensemble DOA                             |**0.9776** (10 X 650)  |**
-0.886** (10 X 700)   |0.8058 (10 X 450)  |
+| KCNet w/ Ensemble DOA                             |**0.9776** (10 X 650)  |**0.886** (10 X 700)   |0.8058 (10 X 450)  |
 
 ## Contributing
