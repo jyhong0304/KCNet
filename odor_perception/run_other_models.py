@@ -52,7 +52,6 @@ for name_clf in list_clfs:
     elif name_clf == 'knn':
         clf = KNeighborsClassifier(**study.best_params)
     else:
-        print(study.best_params)
         clf = SVC(**study.best_params)
 
     clf.fit(X_train_val, y_train_val)
