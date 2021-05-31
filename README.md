@@ -30,12 +30,41 @@ To install requirements:
 pip install -r requirements.txt
 ```
 
-## Running
+## Execution
 
-To train the model(s) in the paper, run this command:
+### Odor Perception Tasks
 
+- To train and test the KCNet, run this command:
 ```train
-python train.py --input-data <path_to_data> --alpha 10 --beta 20
+python odor_perception/run_KCNet.py 
+--data=sweet 
+--hsize=1300 
+--data_path=DATA_PATH
+```
+
+- To train and test the KCNet with DOA, run this command:
+```train
+python odor_perception/run_KCNet_DOA.py 
+--epoch=100
+--data=sweet
+--data_path=DATA_PATH
+--hsize=1300
+--lr=0.5
+--stop_metric=0.87
+--show_images=false
+```
+
+- To train and test the KCNet with Ensemble DOA, run this command:
+```train
+python odor_perception/run_KCNet_DOA.py 
+--n_submodels=13
+--epoch=100
+--data=sweet
+--data_path=DATA_PATH
+--hsize=100
+--lr=0.5
+--stop_metric=0.90
+--show_images=false
 ```
 
 ## Results
