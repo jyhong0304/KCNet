@@ -38,9 +38,6 @@ if opt.data == 'sweet':
     df_sweet = pd.read_csv(PATH_DATA_ODOR_SWEET)
     X, y = df_sweet[df_sweet.columns[:-1]].to_numpy(), df_sweet[df_sweet.columns[-1]].to_numpy()
     X_train_val, X_test, y_train_val, y_test = train_test_split(X, y, test_size=0.1, random_state=1, stratify=y)
-    sc = StandardScaler()
-    X_train_val = sc.fit_transform(X_train_val)
-    X_test = sc.transform(X_test)
     alpha = 100
 else:
     print('Dataset : Musky')
