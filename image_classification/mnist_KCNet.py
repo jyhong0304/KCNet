@@ -7,9 +7,6 @@ import torchvision.transforms as transforms
 from models.KCNet import KCNet
 from helper_func import to_onehot
 from helper_func import get_all_data
-import matplotlib.pyplot as plt
-import seaborn as sns
-import pandas as pd
 import time
 
 
@@ -67,7 +64,7 @@ train_labels = to_onehot(batch_size=len(dataset), num_classes=num_classes, y=tra
 
 test_images, test_labels = get_all_data(test_dataset, device, shuffle=False, **test_kwargs)
 test_labels = to_onehot(batch_size=len(test_dataset), num_classes=num_classes, y=test_labels, device=device)
-print('Data done.')
+print('Data preparation done.')
 
 #################
 # Model
@@ -77,5 +74,5 @@ model = KCNet(input_size=image_size, h_size=opt.hsize, num_glom_inputs=7, num_cl
               reg=13)
 model.fit(train_images, train_labels)
 acc = model.evaluate(test_images, test_labels)
-print('Training time: {}'.format(time.time() - start_time))
+print('Training time: {} sec'.format(time.time() - start_time))
 print('Model with hsize {} - Accuracy: {}'.format(opt.hsize, acc))
