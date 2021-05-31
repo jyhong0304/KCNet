@@ -78,7 +78,7 @@ for epoch in range(opt.epoch):
     cr = classification_report(model.predict_label(X_val), y_val, output_dict=True)
     cur_f1 = cr['weighted avg']['f1-score']
     print('Epoch {} - Validation weighted F1 score: {}'.format(epoch + 1, cur_f1))
-    # 3. Stopping Criteria check and Increase number of hidden units later
+    # 3. Stopping Criteria
     if cur_f1 > opt.stop_metric:
         print('Stopping criteria satisfied.')
         break
