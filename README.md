@@ -1,6 +1,6 @@
 # KCNet : An Insect-Inspired Single-Hidden-Layer Neural Network with Randomized Binary Weights for Prediction and Classification Tasks
 
-This repository is the official implementation of [KCNet].
+This repository is the official implementation of [KCNet]. All source codes were implented in Python 3.7.
 
 ## Abstract
 
@@ -31,6 +31,8 @@ pip install -r requirements.txt
 ```
 
 ## Execution
+
+All the details of best hyperparameters for KCNet and its variants are described at [this link](https://github.com/jyhong0304/KCNet/wiki/Best-Hyperparameters-for-KCNet-and-its-variants).
 
 ### Odor Perception Tasks
 
@@ -65,6 +67,32 @@ python odor_perception/run_KCNet_DOA.py
 --lr=0.5
 --stop_metric=0.90
 --show_images=false
+```
+
+### Image Classification Tasks
+
+- To train and test the KCNet for MNIST, run this command:
+```train
+python image_classification/mnist_KCNet.py --hsize=6500 
+```
+
+- To train and test the KCNet with DOA for Fashion-MNIST, run this command:
+```train
+python image_classification/fashion-mnist_KCNet_DOA.py 
+--epoch=5
+--hsize=7000 
+--lr=1e-5
+--stop_metric=0.90
+```
+
+- To train and test the KCNet with ensemble DOA for EMNIST-balanced, run this command:
+```train
+python image_classification/emnist-balanced_KCNet_EnsembleDOA.py 
+--n_submodels=10
+--epoch=30
+--hsize=450
+--lr=1e-2
+--stop_metric=0.85
 ```
 
 ## Results
