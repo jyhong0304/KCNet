@@ -9,13 +9,14 @@ from imblearn.over_sampling import ADASYN
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--data', type=str, default=None, help='Dataset.', required=True)
+parser.add_argument('--data_path', type=str, default=None, help='The path of dataset.', required=True)
 parser.add_argument('--hsize', type=int, default=1000, help='The number of hidden nodes.')
 opt = parser.parse_args()
 
 # Dataset
 if opt.data == 'sweet':
     print('Dataset : Sweet')
-    PATH_DATA_ODOR_SWEET = '~/data/odor_perception/odor_sweet_dataset.csv'
+    PATH_DATA_ODOR_SWEET = opt.data_path
     df_sweet = pd.read_csv(PATH_DATA_ODOR_SWEET)
     X, y = df_sweet[df_sweet.columns[:-1]].to_numpy(), df_sweet[df_sweet.columns[-1]].to_numpy()
     X_train_val, X_test, y_train_val, y_test = train_test_split(X, y, test_size=0.1, random_state=1, stratify=y)
@@ -25,7 +26,7 @@ if opt.data == 'sweet':
     alpha = 100
 else:
     print('Dataset : Musky')
-    PATH_DATA_ODOR_MUSKY = "~/data/odor_perception/odor_musky_dataset.csv"
+    PATH_DATA_ODOR_MUSKY = opt.data_path
     df_musky = pd.read_csv(PATH_DATA_ODOR_MUSKY)
     X, y = df_musky[df_musky.columns[:-1]].to_numpy(), df_musky[df_musky.columns[-1]].to_numpy()
     # define oversampling strategy
