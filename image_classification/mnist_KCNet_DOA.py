@@ -7,6 +7,8 @@ from helper_func import to_onehot
 from helper_func import get_all_data
 import matplotlib.pyplot as plt
 import seaborn as sns
+import time
+
 
 
 def str2bool(v):
@@ -72,6 +74,7 @@ print('Data preparation done.')
 #################
 # Model
 #################
+start_time = time.time()
 model = KCNet(input_size=image_size, h_size=opt.hsize, num_classes=num_classes, gen_S=True, device=device, reg=13)
 if opt.show_images:
     if use_cuda:
@@ -113,4 +116,5 @@ if opt.show_images:
     ax = sns.heatmap(W).set_title('Final Weight Matrix after DOA')
     plt.show()
 test_acc = model.evaluate(test_images, test_labels)
+print('Training time: {} sec'.format(time.time() - start_time))
 print('KCNet with DOA Test acc : {}'.format(test_acc))
