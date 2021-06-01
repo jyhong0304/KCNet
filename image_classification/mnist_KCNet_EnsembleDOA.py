@@ -8,6 +8,7 @@ from helper_func import get_all_data
 import matplotlib.pyplot as plt
 import seaborn as sns
 import numpy as np
+import time
 
 
 def str2bool(v):
@@ -78,6 +79,7 @@ print('Data preparation done.')
 results_val_acc = []
 results_test_acc = []
 results_W = []
+start_time = time.time()
 for idx_submodel in range(opt.n_submodels):
     model = KCNet(input_size=image_size, h_size=opt.hsize, num_classes=num_classes, gen_S=True, device=device, reg=13)
     prev_acc = -1
@@ -94,7 +96,7 @@ for idx_submodel in range(opt.n_submodels):
         # Evaluate model
         cur_acc = model.evaluate(X_val, y_val)
         results_val_acc.append({'Epoch': epoch + 1, 'Accuracy': cur_acc})
-        print('Submodel. {}: Epoch {} - Val F1: {}'.format(idx_submodel + 1, epoch + 1, cur_acc))
+        print('Submodel. {}: Epoch {} - Val accuracy: {}'.format(idx_submodel + 1, epoch + 1, cur_acc))
         # Early stopping criteria
         if cur_acc > opt.stop_metric:
             print('Early Stopping.')
@@ -122,6 +124,7 @@ model = KCNet(input_size=image_size, h_size=opt.hsize * opt.n_submodels, num_cla
               init_W=torch.cat(results_W, dim=0), device=device, reg=13)
 model.fit(train_val_images, train_val_labels)
 test_acc = model.evaluate(test_images, test_labels)
+print('Training time: {} sec'.format(time.time() - start_time))
 print('Ensemble model Test Accuracy : {}'.format(test_acc))
 if opt.show_images:
     if use_cuda:
