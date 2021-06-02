@@ -32,7 +32,7 @@ pip install -r requirements.txt
 
 ## Execution
 
-All the details of best hyperparameters for KCNet and its variants are described at [this link](https://github.com/jyhong0304/KCNet/wiki/Best-Hyperparameters-for-KCNet-and-its-variants).
+All the details of best hyperparameters for KCNet and its variants are described at the paper.
 
 ### Odor Perception Tasks
 
