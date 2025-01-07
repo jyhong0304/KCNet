@@ -110,9 +110,11 @@ All content in this repository is licensed under the MIT license.
 You can cite our work
 ```
 @article{hong2021kcnet,
-  title={Kcnet: An insect-inspired single-hidden-layer neural network with randomized binary weights for prediction and classification tasks},
-  author={Hong, Jinyung and Pavlic, Theodore P},
+  title={{KCNet}: An insect-inspired single-hidden-layer neural network with randomized binary weights for prediction and classification tasks},
+  author={Hong, Jinyung and Pavlic, Theodore P.},
   journal={arXiv preprint arXiv:2108.07554},
   year={2021}
 }
+
+
 ```
