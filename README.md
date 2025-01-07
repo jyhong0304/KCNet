@@ -1,6 +1,6 @@
 # KCNet : An Insect-Inspired Single-Hidden-Layer Neural Network with Randomized Binary Weights for Prediction and Classification Tasks
 
-This repository is the official implementation of KCNet. All source codes were implented in Python 3.7.
+This repository is the official implementation of [KCNet](https://arxiv.org/abs/2108.07554v2). All source codes were implented in Python 3.7.
 
 ## Abstract
 
